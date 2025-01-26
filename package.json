@@ -1,0 +1,30 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm install && prisma generate --schema=./server-side/prisma/schema.prisma && npm install --prefix client-side && npm run build --prefix client-side",
+    "dev": "cross-env NODE_ENV=development nodemon server-side/src/server.js",
+    "start": "cross-env NODE_ENV=production node server-side/src/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cros": "^1.0.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^5.22.0",
+    "socket.io": "^4.8.1"
+  }
+}
